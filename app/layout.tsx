@@ -16,7 +16,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: 'DeepFlow Logistics | Professional Trucking Services',
+  title: 'MegaMotion Logistics | Professional Trucking Services',
   description: 'Reliable freight and logistics services for your business. Fast, professional, and trustworthy transportation solutions.',
   generator: 'v0.app',
   icons: {

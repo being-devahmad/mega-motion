@@ -13,7 +13,7 @@ export function Footer() {
   ]
 
   const companyLinks = [
-    { name: 'About DeepFlow', href: '/about' },
+    { name: 'About MegaMotion', href: '/about' },
     { name: 'Carrier Network', href: '/carriers' },
     { name: 'Careers', href: '/careers' },
     { name: 'Get a Fast Quote', href: '/quote' },
@@ -41,7 +41,7 @@ export function Footer() {
                 <Truck size={24} className="text-white" />
               </div>
               <div className="flex flex-col">
-                <span className="font-heading font-black text-2xl leading-none tracking-tight">DEEPFLOW</span>
+                <span className="font-heading font-black text-2xl leading-none tracking-tight">MegaMotion</span>
                 <span className="text-[10px] font-black tracking-[0.25em] text-accent-orange uppercase mt-1">Specialists</span>
               </div>
             </Link>
@@ -124,7 +124,7 @@ export function Footer() {
                 </div>
                 <div className="flex flex-col">
                   <span className="text-xs font-black tracking-widest text-white/40 uppercase mb-1">Send a Message</span>
-                  <Link href="mailto:support@deepflow.com" className="text-base font-bold hover:text-accent-orange transition-colors">support@deepflow.com</Link>
+                  <Link href="mailto:support@MegaMotion.com" className="text-base font-bold hover:text-accent-orange transition-colors">support@MegaMotion.com</Link>
                 </div>
               </div>
               <div className="flex items-start gap-4 group">
@@ -143,7 +143,7 @@ export function Footer() {
         {/* Bottom Bar Container */}
         <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="flex flex-col md:flex-row items-center gap-4 text-sm text-white/40 font-medium">
-            <p>&copy; {currentYear} DeepFlow Logistics Specialists. All rights reserved.</p>
+            <p>&copy; {currentYear} MegaMotion Logistics Specialists. All rights reserved.</p>
             <div className="hidden md:block w-px h-4 bg-white/10" />
             <div className="flex gap-6">
               {legalLinks.map((link, idx) => (

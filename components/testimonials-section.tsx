@@ -9,7 +9,7 @@ export function TestimonialsSection() {
     {
       name: 'Sarah Johnson',
       role: 'Operations Manager, Retail Logistics',
-      content: 'Switching to DeepFlow was the best decision for our holiday rush. No brokers, no confusion—just on-time deliveries every single time. Their direct communication model is a breath of fresh air.',
+      content: 'Switching to MegaMotion was the best decision for our holiday rush. No brokers, no confusion—just on-time deliveries every single time. Their direct communication model is a breath of fresh air.',
       rating: 5,
       avatar: '/avatar-1.png'
     },
@@ -23,7 +23,7 @@ export function TestimonialsSection() {
     {
       name: 'David Rodriguez',
       role: 'CEO, Manufacturing Plus',
-      content: "DeepFlow's scheduled routes have stabilized our supply chain. Their DOT compliance and professional drivers are exactly what we needed for our high-value freight requirements.",
+      content: "MegaMotion's scheduled routes have stabilized our supply chain. Their DOT compliance and professional drivers are exactly what we needed for our high-value freight requirements.",
       rating: 5,
       avatar: '/avatar-3.png'
     }
@@ -45,7 +45,7 @@ export function TestimonialsSection() {
             Trusted by <span className="text-trust-blue">Industry Leaders</span>
           </h2>
           <p className="text-lg text-text-muted max-w-2xl mx-auto leading-relaxed font-medium">
-            See why manufacturers, retailers, and fleet owners choose DeepFlow
+            See why manufacturers, retailers, and fleet owners choose MegaMotion
             for dependable, broker-free logistics across the United States.
           </p>
         </div>

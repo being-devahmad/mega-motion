@@ -51,7 +51,7 @@ export function Header() {
                 "font-heading font-bold text-2xl tracking-tight leading-none",
                 scrolled ? "text-primary-navy" : "text-white"
               )}>
-                DEEP<span className="text-accent-orange">FLOW</span>
+                MEGA<span className="text-accent-orange">MOTION</span>
               </span>
               <span className={cn(
                 "text-[10px] uppercase tracking-[0.2em] font-medium leading-none mt-1",

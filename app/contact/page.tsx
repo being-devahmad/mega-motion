@@ -19,7 +19,7 @@ export default function ContactPage() {
     {
       icon: Mail,
       title: 'Email Support',
-      value: 'support@deepflow.com',
+      value: 'support@MegaMotion.com',
       secondary: 'Average response: 15 mins',
       color: 'text-trust-blue',
       bg: 'bg-trust-blue/10'

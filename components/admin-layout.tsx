@@ -23,9 +23,8 @@ export function AdminLayout({ children }: AdminLayoutProps) {
     <div className="flex h-screen bg-background">
       {/* Sidebar */}
       <aside
-        className={`${
-          sidebarOpen ? 'w-64' : 'w-20'
-        } bg-primary text-primary-foreground transition-all duration-300 flex flex-col border-r border-primary-foreground/10`}
+        className={`${sidebarOpen ? 'w-64' : 'w-20'
+          } bg-primary text-primary-foreground transition-all duration-300 flex flex-col border-r border-primary-foreground/10`}
       >
         {/* Header */}
         <div className="p-4 border-b border-primary-foreground/10 flex items-center justify-between">
@@ -33,7 +32,7 @@ export function AdminLayout({ children }: AdminLayoutProps) {
             <div className="w-8 h-8 bg-accent rounded-lg flex items-center justify-center">
               <span className="text-accent-foreground text-sm font-bold">DF</span>
             </div>
-            {sidebarOpen && <span className="font-bold">DeepFlow</span>}
+            {sidebarOpen && <span className="font-bold">MegaMotion</span>}
           </div>
           <button
             onClick={() => setSidebarOpen(!sidebarOpen)}
