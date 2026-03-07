@@ -13,7 +13,8 @@ export function ServicesSection() {
       description: 'Dedicated truck for your shipment. Ideal for large loads and direct routes with no transfers.',
       buttonText: 'Schedule FTL',
       image: '/service-ftl.png',
-      icon: Truck
+      icon: Truck,
+      href: '/booking'
     },
     {
       id: '02',
@@ -21,7 +22,8 @@ export function ServicesSection() {
       description: 'Cost-effective solution for smaller loads. Pay only for the space you use in a professional freight environment.',
       buttonText: 'Book LTL',
       image: '/service-ltl.png',
-      icon: Package
+      icon: Package,
+      href: '/booking'
     },
     {
       id: '03',
@@ -29,7 +31,8 @@ export function ServicesSection() {
       description: 'Urgent freight? We provide fast pickup and rapid delivery options for your time-sensitive shipments.',
       buttonText: 'Check Availability',
       image: '/service-sameday.png',
-      icon: Clock
+      icon: Clock,
+      href: '/booking'
     },
     {
       id: '04',
@@ -37,7 +40,8 @@ export function ServicesSection() {
       description: 'Recurring deliveries with predictable schedules. Ideal for long-term partnerships and stable logistics.',
       buttonText: 'Set Up Route',
       image: '/service-scheduled.png',
-      icon: Calendar
+      icon: Calendar,
+      href: '/booking'
     },
     {
       id: '05',
@@ -45,7 +49,8 @@ export function ServicesSection() {
       description: 'Know where your load is at every moment with live tracking updates and GPS integration.',
       buttonText: 'Track a Load',
       image: '/service-tracking.png',
-      icon: MapPin
+      icon: MapPin,
+      href: '/tracking'
     },
     {
       id: '06',
@@ -53,7 +58,8 @@ export function ServicesSection() {
       description: 'Fully compliant with DOT regulations and insured for secure transport. Your cargo is in safe hands.',
       buttonText: 'View Credentials',
       image: '/service-licensed.png',
-      icon: ShieldCheck
+      icon: ShieldCheck,
+      href: '/contact'
     }
   ]
 
@@ -119,7 +125,7 @@ export function ServicesSection() {
                 <hr className="border-gray-100 mb-6" />
 
                 <Link
-                  href="/booking"
+                  href={service.href}
                   className="inline-flex items-center gap-2 text-primary-navy font-bold text-sm tracking-wide group-hover:gap-4 transition-all"
                 >
                   <span className="relative">

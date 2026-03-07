@@ -22,9 +22,9 @@ export function Header() {
   const navLinks = [
     { name: 'Home', href: '/' },
     { name: 'Services', href: '#services' },
-    { name: 'About Us', href: '#about' },
-    { name: 'Careers', href: '#careers' },
+    { name: 'Book Now', href: '/booking' },
     { name: 'Contact', href: '/contact' },
+    { name: 'Track your truck', href: '/tracking' },
   ]
 
   return (

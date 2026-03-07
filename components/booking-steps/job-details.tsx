@@ -1,140 +1,131 @@
+'use client'
+
 import { Input } from '@/components/ui/input'
+import { Label } from '@/components/ui/label'
+import { useBookingStore } from '@/store/use-booking-store'
+import { MapPin, Weight, Maximize, FileText, Calendar } from 'lucide-react'
 
-interface JobDetailsProps {
-  data: {
-    origin: string
-    destination: string
-    weight: string
-    dimensions: string
-    itemDescription: string
-    pickupDate: string
-    deliveryDate: string
-    specialInstructions: string
-  }
-  onChange: (data: Partial<JobDetailsProps['data']>) => void
-}
+export function JobDetails() {
+  const { formData, updateFormData } = useBookingStore()
 
-export function JobDetails({ data, onChange }: JobDetailsProps) {
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target
-    onChange({ [name]: value } as any)
+  const handleUpdate = (name: string, value: string) => {
+    updateFormData({ [name]: value } as any)
   }
 
   return (
-    <div className="space-y-6">
-      <div>
-        <h2 className="text-2xl font-bold text-foreground mb-2">Shipment Details</h2>
-        <p className="text-muted-foreground mb-6">Provide information about your shipment</p>
+    <div className="space-y-10 animate-in fade-in slide-in-from-right-4 duration-700">
+      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
+        <div>
+          <h2 className="text-3xl font-bold font-heading text-primary-navy mb-2">Shipment Details</h2>
+          <p className="text-text-muted text-lg leading-relaxed">Please provide the route and cargo specifications for your shipment.</p>
+        </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <div>
-          <label className="block text-sm font-medium text-foreground mb-2">
-            Pickup Location
-          </label>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {/* Origin */}
+        <div className="space-y-3">
+          <Label htmlFor="origin" className="text-sm font-bold uppercase tracking-widest text-primary-navy/70 flex items-center gap-2">
+            <MapPin size={16} className="text-accent-orange" />
+            Pick-up Location
+          </Label>
           <Input
-            type="text"
-            name="origin"
-            value={data.origin}
-            onChange={handleChange}
-            placeholder="City, State or Address"
-            className="bg-input"
+            id="origin"
+            placeholder="City, State or Full Address"
+            value={formData.origin}
+            onChange={(e) => handleUpdate('origin', e.target.value)}
+            className="h-14 bg-gray-50/50 border-gray-100 focus:bg-white focus:ring-accent-orange/20 focus:border-accent-orange rounded-xl text-lg transition-all"
           />
         </div>
 
-        <div>
-          <label className="block text-sm font-medium text-foreground mb-2">
-            Delivery Location
-          </label>
+        {/* Destination */}
+        <div className="space-y-3">
+          <Label htmlFor="destination" className="text-sm font-bold uppercase tracking-widest text-primary-navy/70 flex items-center gap-2">
+            <MapPin size={16} className="text-trust-blue" />
+            Delivery Destination
+          </Label>
           <Input
-            type="text"
-            name="destination"
-            value={data.destination}
-            onChange={handleChange}
-            placeholder="City, State or Address"
-            className="bg-input"
+            id="destination"
+            placeholder="City, State or Full Address"
+            value={formData.destination}
+            onChange={(e) => handleUpdate('destination', e.target.value)}
+            className="h-14 bg-gray-50/50 border-gray-100 focus:bg-white focus:ring-accent-orange/20 focus:border-accent-orange rounded-xl text-lg transition-all"
           />
         </div>
 
-        <div>
-          <label className="block text-sm font-medium text-foreground mb-2">
-            Weight (lbs)
-          </label>
+        {/* Weight */}
+        <div className="space-y-3">
+          <Label htmlFor="weight" className="text-sm font-bold uppercase tracking-widest text-primary-navy/70 flex items-center gap-2">
+            <Weight size={16} className="text-primary-navy" />
+            Total Weight (lbs)
+          </Label>
           <Input
+            id="weight"
             type="number"
-            name="weight"
-            value={data.weight}
-            onChange={handleChange}
-            placeholder="e.g., 5000"
-            className="bg-input"
+            placeholder="e.g. 15,000"
+            value={formData.weight}
+            onChange={(e) => handleUpdate('weight', e.target.value)}
+            className="h-14 bg-gray-50/50 border-gray-100 focus:bg-white focus:ring-accent-orange/20 focus:border-accent-orange rounded-xl text-lg transition-all"
           />
         </div>
 
-        <div>
-          <label className="block text-sm font-medium text-foreground mb-2">
-            Dimensions (L x W x H)
-          </label>
+        {/* Dimensions */}
+        <div className="space-y-3">
+          <Label htmlFor="dimensions" className="text-sm font-bold uppercase tracking-widest text-primary-navy/70 flex items-center gap-2">
+            <Maximize size={16} className="text-primary-navy" />
+            Cargo Dimensions
+          </Label>
           <Input
-            type="text"
-            name="dimensions"
-            value={data.dimensions}
-            onChange={handleChange}
-            placeholder="e.g., 48 x 40 x 60 inches"
-            className="bg-input"
+            id="dimensions"
+            placeholder="L x W x H (inches)"
+            value={formData.dimensions}
+            onChange={(e) => handleUpdate('dimensions', e.target.value)}
+            className="h-14 bg-gray-50/50 border-gray-100 focus:bg-white focus:ring-accent-orange/20 focus:border-accent-orange rounded-xl text-lg transition-all"
           />
         </div>
 
-        <div className="md:col-span-2">
-          <label className="block text-sm font-medium text-foreground mb-2">
+        {/* Pickup Date */}
+        <div className="space-y-3">
+          <Label htmlFor="pickupDate" className="text-sm font-bold uppercase tracking-widest text-primary-navy/70 flex items-center gap-2">
+            <Calendar size={16} className="text-primary-navy" />
+            Requested Pickup Date
+          </Label>
+          <Input
+            id="pickupDate"
+            type="date"
+            value={formData.pickupDate}
+            onChange={(e) => handleUpdate('pickupDate', e.target.value)}
+            className="h-14 bg-gray-50/50 border-gray-100 focus:bg-white focus:ring-accent-orange/20 focus:border-accent-orange rounded-xl text-lg transition-all"
+          />
+        </div>
+
+        {/* Delivery Date */}
+        <div className="space-y-3">
+          <Label htmlFor="deliveryDate" className="text-sm font-bold uppercase tracking-widest text-primary-navy/70 flex items-center gap-2">
+            <Calendar size={16} className="text-primary-navy" />
+            Requested Delivery Date
+          </Label>
+          <Input
+            id="deliveryDate"
+            type="date"
+            value={formData.deliveryDate}
+            onChange={(e) => handleUpdate('deliveryDate', e.target.value)}
+            className="h-14 bg-gray-50/50 border-gray-100 focus:bg-white focus:ring-accent-orange/20 focus:border-accent-orange rounded-xl text-lg transition-all"
+          />
+        </div>
+
+        {/* Description */}
+        <div className="md:col-span-2 space-y-3">
+          <Label htmlFor="itemDescription" className="text-sm font-bold uppercase tracking-widest text-primary-navy/70 flex items-center gap-2">
+            <FileText size={16} className="text-primary-navy" />
             Item Description
-          </label>
+          </Label>
           <textarea
-            name="itemDescription"
-            value={data.itemDescription}
-            onChange={handleChange}
-            placeholder="What are you shipping?"
-            rows={3}
-            className="w-full px-3 py-2 bg-input border border-input rounded-md text-foreground placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-accent"
-          />
-        </div>
-
-        <div>
-          <label className="block text-sm font-medium text-foreground mb-2">
-            Preferred Pickup Date
-          </label>
-          <Input
-            type="date"
-            name="pickupDate"
-            value={data.pickupDate}
-            onChange={handleChange}
-            className="bg-input"
-          />
-        </div>
-
-        <div>
-          <label className="block text-sm font-medium text-foreground mb-2">
-            Preferred Delivery Date
-          </label>
-          <Input
-            type="date"
-            name="deliveryDate"
-            value={data.deliveryDate}
-            onChange={handleChange}
-            className="bg-input"
-          />
-        </div>
-
-        <div className="md:col-span-2">
-          <label className="block text-sm font-medium text-foreground mb-2">
-            Special Instructions (Optional)
-          </label>
-          <textarea
-            name="specialInstructions"
-            value={data.specialInstructions}
-            onChange={handleChange}
-            placeholder="Any special handling requirements?"
-            rows={3}
-            className="w-full px-3 py-2 bg-input border border-input rounded-md text-foreground placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-accent"
+            id="itemDescription"
+            placeholder="What exactly are you shipping? (e.g. 10 pallets of frozen goods)"
+            value={formData.itemDescription}
+            onChange={(e) => handleUpdate('itemDescription', e.target.value)}
+            rows={4}
+            className="w-full p-4 bg-gray-50/50 border-2 border-gray-100 focus:bg-white focus:ring-accent-orange/20 focus:border-accent-orange rounded-xl text-lg transition-all focus:outline-none"
           />
         </div>
       </div>

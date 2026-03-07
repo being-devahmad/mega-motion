@@ -1,117 +1,102 @@
-import { CheckCircle, Download, ArrowRight } from 'lucide-react'
+'use client'
+
+import { CheckCircle, Download, ArrowRight, Share2, Printer, MapPin, Truck, Calendar } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import Link from 'next/link'
+import { useBookingStore } from '@/store/use-booking-store'
 
-interface ConfirmationProps {
-  formData: {
-    service: string
-    origin: string
-    destination: string
-    weight: string
-    pickupDate: string
-    deliveryDate: string
-    email: string
-    company: string
-  }
-}
+export function Confirmation() {
+  const { formData } = useBookingStore()
+  const bookingId = `BK-${Math.random().toString(36).substr(2, 6).toUpperCase()}-2026`
 
-export function Confirmation({ formData }: ConfirmationProps) {
   return (
-    <div className="space-y-8 py-8">
-      {/* Success Message */}
-      <div className="text-center space-y-4">
-        <div className="flex justify-center">
-          <div className="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center">
-            <CheckCircle className="w-8 h-8 text-accent" />
+    <div className="space-y-12 py-4 animate-in zoom-in-95 duration-700">
+      {/* Success Hero */}
+      <div className="text-center space-y-6">
+        <div className="relative inline-block">
+          <div className="absolute inset-0 bg-accent-orange/20 rounded-full blur-2xl animate-pulse" />
+          <div className="relative w-24 h-24 bg-accent-orange text-white rounded-[2rem] flex items-center justify-center shadow-2xl shadow-accent-orange/40 mx-auto">
+            <CheckCircle size={48} strokeWidth={2.5} />
           </div>
         </div>
-        <h2 className="text-3xl font-bold text-foreground">Booking Confirmed!</h2>
-        <p className="text-lg text-muted-foreground max-w-lg mx-auto">
-          Your shipment has been successfully booked. A confirmation email has been sent to your inbox with all the details.
-        </p>
+
+        <div className="space-y-2">
+          <h2 className="text-4xl font-black font-heading text-primary-navy tracking-tight">Booking Confirmed!</h2>
+          <p className="text-text-muted text-lg max-w-md mx-auto leading-relaxed">
+            Your logistics request has been received. Our dispatchers are already working on your shipment.
+          </p>
+        </div>
       </div>
 
-      {/* Booking Details */}
-      <div className="bg-gradient-to-br from-accent/5 to-primary/5 border border-border rounded-lg p-8 space-y-4">
-        <h3 className="font-semibold text-foreground mb-4">Booking Reference</h3>
-        <div className="bg-card rounded border border-border p-4 font-mono text-center font-bold text-lg text-foreground">
-          DF-2024-{Math.random().toString(36).substr(2, 9).toUpperCase()}
+      {/* Booking summary card */}
+      <div className="bg-white rounded-[2.5rem] border-2 border-gray-50 shadow-xl shadow-gray-200/40 overflow-hidden">
+        <div className="bg-primary-navy p-6 flex flex-col md:flex-row md:items-center justify-between gap-4">
+          <div>
+            <p className="text-white/60 text-xs font-bold uppercase tracking-widest mb-1">Booking Reference</p>
+            <h3 className="text-2xl font-black text-white font-mono tracking-wider">{bookingId}</h3>
+          </div>
+          <div className="flex gap-2">
+            <Button size="icon" variant="secondary" className="bg-white/10 hover:bg-white/20 border-0 text-white">
+              <Printer size={18} />
+            </Button>
+            <Button size="icon" variant="secondary" className="bg-white/10 hover:bg-white/20 border-0 text-white">
+              <Share2 size={18} />
+            </Button>
+          </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4">
-          <div>
-            <p className="text-sm text-muted-foreground mb-1">Service Type</p>
-            <p className="font-medium text-foreground">
-              {formData.service === 'ftl' ? 'Full Truckload' : formData.service === 'ltl' ? 'Less Than Truckload' : 'Same-Day Express'}
+        <div className="p-8 md:p-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="space-y-1">
+            <p className="text-xs font-bold text-primary-navy/40 uppercase tracking-widest flex items-center gap-2">
+              <Truck size={14} className="text-accent-orange" />
+              Service
             </p>
+            <p className="text-lg font-bold text-primary-navy capitalize">{formData.service.replace('-', ' ') || 'Express'}</p>
           </div>
 
-          <div>
-            <p className="text-sm text-muted-foreground mb-1">Pickup Date</p>
-            <p className="font-medium text-foreground">{formData.pickupDate || 'To be scheduled'}</p>
+          <div className="space-y-1">
+            <p className="text-xs font-bold text-primary-navy/40 uppercase tracking-widest flex items-center gap-2">
+              <Calendar size={14} className="text-accent-orange" />
+              Pickup Date
+            </p>
+            <p className="text-lg font-bold text-primary-navy">{formData.pickupDate || 'Scheduled ASAP'}</p>
           </div>
 
-          <div>
-            <p className="text-sm text-muted-foreground mb-1">From</p>
-            <p className="font-medium text-foreground">{formData.origin}</p>
-          </div>
-
-          <div>
-            <p className="text-sm text-muted-foreground mb-1">To</p>
-            <p className="font-medium text-foreground">{formData.destination}</p>
-          </div>
-
-          <div>
-            <p className="text-sm text-muted-foreground mb-1">Weight</p>
-            <p className="font-medium text-foreground">{formData.weight} lbs</p>
-          </div>
-
-          <div>
-            <p className="text-sm text-muted-foreground mb-1">Estimated Delivery</p>
-            <p className="font-medium text-foreground">{formData.deliveryDate || '3-5 business days'}</p>
+          <div className="space-y-1">
+            <p className="text-xs font-bold text-primary-navy/40 uppercase tracking-widest flex items-center gap-2">
+              <MapPin size={14} className="text-accent-orange" />
+              Destination
+            </p>
+            <p className="text-lg font-bold text-primary-navy truncate">{formData.destination || 'Global'}</p>
           </div>
         </div>
-      </div>
 
-      {/* What's Next */}
-      <div className="space-y-4">
-        <h3 className="font-semibold text-foreground text-lg">What's Next?</h3>
-        <div className="space-y-3">
-          <div className="flex gap-3 p-4 bg-card border border-border rounded-lg">
-            <div className="w-6 h-6 rounded-full bg-accent/20 flex items-center justify-center flex-shrink-0 font-semibold text-sm text-accent">1</div>
-            <div>
-              <p className="font-medium text-foreground">Confirmation Email</p>
-              <p className="text-sm text-muted-foreground">Check your inbox for booking details and tracking information</p>
+        <div className="px-8 pb-8 md:px-10 md:pb-10">
+          <div className="bg-gray-50/50 rounded-2xl p-6 border border-gray-100 flex items-center justify-between">
+            <div className="flex items-center gap-4">
+              <div className="w-12 h-12 rounded-xl bg-white flex items-center justify-center text-primary-navy shadow-sm">
+                <CheckCircle size={24} className="text-green-500" />
+              </div>
+              <div>
+                <p className="text-sm font-bold text-primary-navy">Total Proposed Quote</p>
+                <p className="text-xs text-text-muted">Including estimated taxes and fees</p>
+              </div>
             </div>
-          </div>
-
-          <div className="flex gap-3 p-4 bg-card border border-border rounded-lg">
-            <div className="w-6 h-6 rounded-full bg-accent/20 flex items-center justify-center flex-shrink-0 font-semibold text-sm text-accent">2</div>
-            <div>
-              <p className="font-medium text-foreground">Pre-Pickup Call</p>
-              <p className="text-sm text-muted-foreground">Our team will call to confirm pickup details within 24 hours</p>
-            </div>
-          </div>
-
-          <div className="flex gap-3 p-4 bg-card border border-border rounded-lg">
-            <div className="w-6 h-6 rounded-full bg-accent/20 flex items-center justify-center flex-shrink-0 font-semibold text-sm text-accent">3</div>
-            <div>
-              <p className="font-medium text-foreground">Real-Time Tracking</p>
-              <p className="text-sm text-muted-foreground">Track your shipment live from pickup to delivery</p>
+            <div className="text-right">
+              <p className="text-2xl font-black text-primary-navy">${(parseFloat(formData.price || '0') * 1.08).toLocaleString()}</p>
             </div>
           </div>
         </div>
       </div>
 
       {/* Actions */}
-      <div className="space-y-3 pt-6 border-t border-border">
-        <Button className="w-full bg-accent hover:bg-accent/90 text-accent-foreground flex items-center justify-center gap-2">
+      <div className="flex flex-col sm:flex-row gap-4 justify-center">
+        <Button size="lg" className="h-14 px-8 bg-primary-navy hover:bg-primary-navy/90 text-white font-bold rounded-xl shadow-lg shadow-primary-navy/20 gap-2 min-w-[200px]">
           <Download size={20} />
-          Download Booking Confirmation
+          Download Receipt
         </Button>
-
-        <Button asChild variant="outline" className="w-full">
-          <Link href="/" className="flex items-center justify-center gap-2">
+        <Button asChild variant="outline" size="lg" className="h-14 px-8 rounded-xl border-2 border-gray-100 hover:bg-gray-50 text-primary-navy font-bold gap-2 min-w-[200px]">
+          <Link href="/">
             Back to Home <ArrowRight size={20} />
           </Link>
         </Button>

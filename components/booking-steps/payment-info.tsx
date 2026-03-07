@@ -1,154 +1,94 @@
+'use client'
+
 import { Input } from '@/components/ui/input'
+import { Label } from '@/components/ui/label'
+import { useBookingStore } from '@/store/use-booking-store'
+import { Mail, Phone, Building2, CreditCard, ShieldCheck } from 'lucide-react'
 
-interface PaymentInfoProps {
-  data: {
-    email: string
-    phone: string
-    company: string
-  }
-  onChange: (data: Partial<PaymentInfoProps['data']>) => void
-}
+export function PaymentInfo() {
+  const { formData, updateFormData } = useBookingStore()
 
-export function PaymentInfo({ data, onChange }: PaymentInfoProps) {
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = e.target
-    onChange({ [name]: value } as any)
+  const handleUpdate = (name: string, value: string) => {
+    updateFormData({ [name]: value } as any)
   }
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-10 animate-in fade-in slide-in-from-right-4 duration-700">
       <div>
-        <h2 className="text-2xl font-bold text-foreground mb-2">Contact & Payment Information</h2>
-        <p className="text-muted-foreground mb-6">We'll use this to confirm your booking</p>
+        <h2 className="text-3xl font-bold font-heading text-primary-navy mb-2">Contact & Payment Info</h2>
+        <p className="text-text-muted text-lg leading-relaxed">Please provide your contact information to finalize the booking process.</p>
+      </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="space-y-3">
+          <Label htmlFor="email" className="text-sm font-bold uppercase tracking-widest text-primary-navy/70 flex items-center gap-2">
+            <Mail size={16} className="text-accent-orange" />
+            Email Address
+          </Label>
+          <Input
+            id="email"
+            type="email"
+            placeholder="johndoe@company.com"
+            value={formData.email}
+            onChange={(e) => handleUpdate('email', e.target.value)}
+            className="h-14 bg-gray-50/50 border-gray-100 focus:bg-white focus:ring-accent-orange/20 focus:border-accent-orange rounded-xl text-lg transition-all"
+          />
+        </div>
+
+        <div className="space-y-3">
+          <Label htmlFor="phone" className="text-sm font-bold uppercase tracking-widest text-primary-navy/70 flex items-center gap-2">
+            <Phone size={16} className="text-accent-orange" />
+            Phone Number
+          </Label>
+          <Input
+            id="phone"
+            type="tel"
+            placeholder="+1 (555) 555-0123"
+            value={formData.phone}
+            onChange={(e) => handleUpdate('phone', e.target.value)}
+            className="h-14 bg-gray-50/50 border-gray-100 focus:bg-white focus:ring-accent-orange/20 focus:border-accent-orange rounded-xl text-lg transition-all"
+          />
+        </div>
+
+        <div className="md:col-span-2 space-y-3">
+          <Label htmlFor="company" className="text-sm font-bold uppercase tracking-widest text-primary-navy/70 flex items-center gap-2">
+            <Building2 size={16} className="text-accent-orange" />
+            Company Name
+          </Label>
+          <Input
+            id="company"
+            placeholder="Logistics Pros Inc."
+            value={formData.company}
+            onChange={(e) => handleUpdate('company', e.target.value)}
+            className="h-14 bg-gray-50/50 border-gray-100 focus:bg-white focus:ring-accent-orange/20 focus:border-accent-orange rounded-xl text-lg transition-all"
+          />
+        </div>
+      </div>
+
+      <div className="mt-8 p-6 rounded-2xl bg-primary-navy/5 border border-primary-navy/10">
+        <div className="flex items-start gap-4">
+          <div className="w-10 h-10 rounded-xl bg-white flex items-center justify-center text-primary-navy shadow-sm">
+            <ShieldCheck size={24} />
+          </div>
+          <div>
+            <h3 className="text-lg font-bold text-primary-navy">Secure Transaction</h3>
+            <p className="text-text-muted text-sm leading-relaxed mt-1">
+              Your information is protected by industry-leading encryption. We will process your quote and reach out within 15 minutes for final payment.
+            </p>
+          </div>
+        </div>
       </div>
 
       <div className="space-y-4">
-        <div>
-          <label className="block text-sm font-medium text-foreground mb-2">
-            Full Name
-          </label>
-          <Input
-            type="text"
-            placeholder="Enter your full name"
-            className="bg-input"
-          />
+        <p className="text-sm font-bold text-primary-navy/50 flex items-center gap-2">
+          <CreditCard size={14} />
+          ACCEPTED PAYMENT METHODS
+        </p>
+        <div className="flex gap-4 opacity-40">
+          <div className="h-8 w-12 bg-gray-400 rounded-md" />
+          <div className="h-8 w-12 bg-gray-400 rounded-md" />
+          <div className="h-8 w-12 bg-gray-400 rounded-md" />
         </div>
-
-        <div>
-          <label className="block text-sm font-medium text-foreground mb-2">
-            Company Name
-          </label>
-          <Input
-            type="text"
-            name="company"
-            value={data.company}
-            onChange={handleChange}
-            placeholder="Your company name"
-            className="bg-input"
-          />
-        </div>
-
-        <div>
-          <label className="block text-sm font-medium text-foreground mb-2">
-            Email Address
-          </label>
-          <Input
-            type="email"
-            name="email"
-            value={data.email}
-            onChange={handleChange}
-            placeholder="your@email.com"
-            className="bg-input"
-          />
-        </div>
-
-        <div>
-          <label className="block text-sm font-medium text-foreground mb-2">
-            Phone Number
-          </label>
-          <Input
-            type="tel"
-            name="phone"
-            value={data.phone}
-            onChange={handleChange}
-            placeholder="(555) 000-0000"
-            className="bg-input"
-          />
-        </div>
-
-        <div>
-          <label className="block text-sm font-medium text-foreground mb-2">
-            Billing Address
-          </label>
-          <Input
-            type="text"
-            placeholder="Street address"
-            className="bg-input"
-          />
-        </div>
-
-        <div className="grid grid-cols-2 gap-4">
-          <Input
-            type="text"
-            placeholder="City"
-            className="bg-input"
-          />
-          <Input
-            type="text"
-            placeholder="State, ZIP"
-            className="bg-input"
-          />
-        </div>
-      </div>
-
-      {/* Payment Method */}
-      <div className="pt-4 border-t border-border">
-        <h3 className="font-semibold text-foreground mb-4">Payment Method</h3>
-        
-        <div className="space-y-3">
-          <label className="flex items-center p-4 border border-border rounded-lg cursor-pointer hover:bg-accent/5 transition-colors">
-            <input
-              type="radio"
-              name="payment"
-              value="card"
-              defaultChecked
-              className="w-4 h-4"
-            />
-            <span className="ml-3 text-foreground font-medium">Credit / Debit Card</span>
-          </label>
-
-          <label className="flex items-center p-4 border border-border rounded-lg cursor-pointer hover:bg-accent/5 transition-colors">
-            <input
-              type="radio"
-              name="payment"
-              value="bank"
-              className="w-4 h-4"
-            />
-            <span className="ml-3 text-foreground font-medium">Bank Transfer</span>
-          </label>
-
-          <label className="flex items-center p-4 border border-border rounded-lg cursor-pointer hover:bg-accent/5 transition-colors">
-            <input
-              type="radio"
-              name="payment"
-              value="invoice"
-              className="w-4 h-4"
-            />
-            <span className="ml-3 text-foreground font-medium">Invoice (Pay Later)</span>
-          </label>
-        </div>
-      </div>
-
-      {/* Terms & Conditions */}
-      <div className="flex items-start gap-2 p-4 bg-muted/30 rounded-lg">
-        <input
-          type="checkbox"
-          id="terms"
-          className="w-4 h-4 mt-1 cursor-pointer"
-        />
-        <label htmlFor="terms" className="text-sm text-muted-foreground cursor-pointer">
-          I agree to the <a href="#" className="text-accent hover:underline">Terms of Service</a> and <a href="#" className="text-accent hover:underline">Privacy Policy</a>
-        </label>
       </div>
     </div>
   )

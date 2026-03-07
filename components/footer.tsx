@@ -9,7 +9,7 @@ export function Footer() {
     { name: 'LTL Shipping', href: '/#services' },
     { name: 'Same-Day Delivery', href: '/#services' },
     { name: 'Scheduled Routes', href: '/#services' },
-    { name: 'Real-Time Tracking', href: '/#tracking' },
+    { name: 'Real-Time Tracking', href: '/tracking' },
   ]
 
   const companyLinks = [
