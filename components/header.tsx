@@ -86,7 +86,7 @@ export function Header() {
               scrolled ? "text-text-dark" : "text-white/90"
             )}>
               <PhoneCall size={16} className="text-accent-orange" />
-              <span>(888) 123-4567</span>
+              <span>9124779714</span>
             </div>
             <Button asChild size="lg" className="bg-accent-orange hover:bg-accent-orange/90 text-white font-bold rounded-full px-8 shadow-lg shadow-accent-orange/20 transition-all hover:scale-105">
               <Link href="/booking">Book a Load</Link>

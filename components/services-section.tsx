@@ -54,12 +54,12 @@ export function ServicesSection() {
     },
     {
       id: '06',
-      title: 'Licensed & Insured',
-      description: 'Fully compliant with DOT regulations and insured for secure transport. Your cargo is in safe hands.',
-      buttonText: 'View Credentials',
-      image: '/service-licensed.png',
-      icon: ShieldCheck,
-      href: '/contact'
+      title: 'Dry Van Unloading',
+      description: 'From warehouse pickups to urgent deliveries, MegaMotion Logistics provides dependable freight solutions across the U.S.',
+      buttonText: 'Schedule a Pickup',
+      image: '/service-dryvan.png',
+      icon: Truck,
+      href: '/booking'
     }
   ]
 

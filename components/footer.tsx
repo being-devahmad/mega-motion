@@ -115,7 +115,9 @@ export function Footer() {
                 </div>
                 <div className="flex flex-col">
                   <span className="text-xs font-black tracking-widest text-white/40 uppercase mb-1">Dispatch Support</span>
-                  <Link href="tel:18001234567" className="text-lg font-bold hover:text-accent-orange transition-colors">(800) 123-4567</Link>
+                  <Link href="tel:18001234567" className="text-lg font-bold hover:text-accent-orange transition-colors">
+                    9124779714
+                  </Link>
                 </div>
               </div>
               <div className="flex items-start gap-4 group">
@@ -124,7 +126,7 @@ export function Footer() {
                 </div>
                 <div className="flex flex-col">
                   <span className="text-xs font-black tracking-widest text-white/40 uppercase mb-1">Send a Message</span>
-                  <Link href="mailto:support@MegaMotion.com" className="text-base font-bold hover:text-accent-orange transition-colors">support@MegaMotion.com</Link>
+                  <Link href="mailto:megamotiontrucking@gmail.com" className="text-base font-bold hover:text-accent-orange transition-colors">megamotiontrucking@gmail.com</Link>
                 </div>
               </div>
               <div className="flex items-start gap-4 group">
@@ -133,7 +135,7 @@ export function Footer() {
                 </div>
                 <div className="flex flex-col">
                   <span className="text-xs font-black tracking-widest text-white/40 uppercase mb-1">Main Headquarters</span>
-                  <span className="text-base font-medium">Dallas-Fort Worth, Texas, USA</span>
+                  <span className="text-base font-medium">1200 Murphy Ave. Savannah, GA 31415, US</span>
                 </div>
               </div>
             </div>

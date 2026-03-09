@@ -11,7 +11,7 @@ export default function ContactPage() {
     {
       icon: Phone,
       title: 'Our Hotline',
-      value: '(800) 555-0123',
+      value: '9124779714',
       secondary: 'Emergency dispatch open 24/7',
       color: 'text-accent-orange',
       bg: 'bg-accent-orange/10'
@@ -19,7 +19,7 @@ export default function ContactPage() {
     {
       icon: Mail,
       title: 'Email Support',
-      value: 'support@MegaMotion.com',
+      value: 'megamotiontrucking@gmail.com',
       secondary: 'Average response: 15 mins',
       color: 'text-trust-blue',
       bg: 'bg-trust-blue/10'
@@ -27,8 +27,8 @@ export default function ContactPage() {
     {
       icon: MapPin,
       title: 'Headquarters',
-      value: '123 Logistics Ave',
-      secondary: 'Dallas, TX 75001, USA',
+      value: '1200 Murphy Ave',
+      secondary: 'Savannah, GA 31415, US',
       color: 'text-primary-navy',
       bg: 'bg-primary-navy/10'
     },
@@ -72,20 +72,24 @@ export default function ContactPage() {
             {/* Left Content: Contact Info & Map/QuickLinks */}
             <div className="lg:w-[40%] space-y-12 animate-in fade-in slide-in-from-left-12 duration-1000">
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 {contactInfo.map((info, index) => {
                   const Icon = info.icon
                   return (
                     <div
                       key={index}
-                      className="group p-6 bg-white border border-gray-100 rounded-[2rem] hover:shadow-xl hover:shadow-primary-navy/5 hover:border-accent-orange/40 transition-all duration-500"
+                      className="group p-6 bg-white border border-gray-100 rounded-[2rem] hover:shadow-xl hover:shadow-primary-navy/5 hover:border-accent-orange/40 transition-all duration-500 flex flex-col min-w-0"
                     >
-                      <div className={`w-12 h-12 rounded-2xl ${info.bg} ${info.color} flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300`}>
+                      <div className={`w-12 h-12 rounded-2xl ${info.bg} ${info.color} flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300 shrink-0`}>
                         <Icon size={24} />
                       </div>
-                      <h3 className="text-lg font-bold text-primary-navy mb-1">{info.title}</h3>
-                      <p className="font-bold text-primary-navy mb-1 group-hover:text-accent-orange transition-colors">{info.value}</p>
-                      <p className="text-sm text-text-muted font-bold opacity-60">{info.secondary}</p>
+                      <h3 className="text-md font-bold text-primary-navy mb-1 truncate">{info.title}</h3>
+                      <p className="font-bold text-primary-navy mb-1 group-hover:text-accent-orange transition-colors break-words overflow-hidden">
+                        {info.value}
+                      </p>
+                      <p className="text-sm text-text-muted font-bold opacity-60 break-words line-clamp-2">
+                        {info.secondary}
+                      </p>
                     </div>
                   )
                 })}
