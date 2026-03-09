@@ -55,7 +55,7 @@ export function HeroSection() {
               className="bg-accent-orange hover:bg-accent-orange/90 text-white font-bold h-16 px-10 text-lg rounded-xl shadow-2xl shadow-accent-orange/30 transition-all hover:scale-105"
             >
               <Link href="/booking" className="flex items-center gap-2">
-                Book a Load Now <ArrowRight size={22} />
+                Book a Truck Now <ArrowRight size={22} />
               </Link>
             </Button>
             <Button

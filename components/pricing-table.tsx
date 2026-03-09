@@ -19,7 +19,7 @@ export function PricingTable() {
         'Full Truckload (FTL) or LTL options',
         'Standard delivery window',
         'Professional driver coordination',
-        'Basic load tracking updates',
+        'Basic truck tracking updates',
         'Email & phone support',
         'Safe and compliant transport'
       ],
@@ -74,7 +74,7 @@ export function PricingTable() {
             Pricing & Plans
           </div>
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-heading font-extrabold text-primary-navy mb-6 tracking-tight">
-            Flexible Delivery Options for <span className="text-accent-orange">Every Load</span>
+            Flexible Delivery Options for <span className="text-accent-orange">Every Truck</span>
           </h2>
           <p className="text-lg text-text-muted max-w-3xl mx-auto leading-relaxed">
             Choose the service level that fits your timeline and freight requirements.

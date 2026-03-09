@@ -7,8 +7,8 @@ export function HowItWorks() {
   const steps = [
     {
       id: '01',
-      title: 'Submit Load Details',
-      description: 'Tell us pickup, drop-off, and load type through our simple intake form.',
+      title: 'Submit Truck Details',
+      description: 'Tell us pickup, drop-off, and truck type through our simple intake form.',
       icon: ClipboardList,
       color: 'bg-trust-blue'
     },
@@ -126,7 +126,7 @@ export function HowItWorks() {
             <div className="px-8 py-4 rounded-xl bg-white shadow-sm flex flex-col sm:flex-row items-center gap-6">
               <span className="text-primary-navy font-bold">Ready to start step 01?</span>
               <button className="bg-accent-orange text-white px-8 py-3 rounded-lg font-bold shadow-lg shadow-accent-orange/20 transition-all hover:scale-105 active:scale-95">
-                Book My First Load
+                Book My First Truck
               </button>
             </div>
           </div>

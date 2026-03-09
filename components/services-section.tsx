@@ -46,8 +46,8 @@ export function ServicesSection() {
     {
       id: '05',
       title: 'Real-Time Tracking',
-      description: 'Know where your load is at every moment with live tracking updates and GPS integration.',
-      buttonText: 'Track a Load',
+      description: 'Know where your truck is at every moment with live tracking updates and GPS integration.',
+      buttonText: 'Track a Truck',
       image: '/service-tracking.png',
       icon: MapPin,
       href: '/tracking'

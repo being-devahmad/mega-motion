@@ -116,7 +116,7 @@ export function Footer() {
                 <div className="flex flex-col">
                   <span className="text-xs font-black tracking-widest text-white/40 uppercase mb-1">Dispatch Support</span>
                   <Link href="tel:18001234567" className="text-lg font-bold hover:text-accent-orange transition-colors">
-                    9124779714
+                    912-477-9714
                   </Link>
                 </div>
               </div>

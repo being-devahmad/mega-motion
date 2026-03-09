@@ -31,17 +31,36 @@ export function CTABanner() {
             Just reliable trucking you can count on.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-6 items-center justify-center w-full">
+          <div className="flex flex-col sm:flex-row gap-5 items-center justify-center w-full mb-10">
             <Button
               asChild
               size="lg"
-              className="w-full sm:w-auto bg-accent-orange hover:bg-accent-orange/90 text-white font-black h-16 px-10 text-lg rounded-xl shadow-2xl shadow-accent-orange/30 transition-all hover:scale-105"
+              className="w-full sm:w-auto bg-accent-orange hover:bg-accent-orange/90 text-white font-black h-16 px-10 text-lg rounded-2xl shadow-2xl shadow-accent-orange/40 transition-all hover:scale-105 group"
             >
               <Link href="/booking" className="flex items-center gap-2">
-                Book Your Load Today <ArrowRight size={22} />
+                Book Your Truck Today
+                <ArrowRight size={22} className="group-hover:translate-x-1 transition-transform" />
               </Link>
             </Button>
 
+            <Button
+              asChild
+              variant="outline"
+              size="lg"
+              className="w-full sm:w-auto bg-white/5 hover:bg-white/10 backdrop-blur-md border-white/20 hover:border-white/40 text-white font-bold h-16 px-10 text-lg rounded-2xl transition-all hover:scale-105"
+            >
+              <Link href="tel:912-477-9714" className="flex items-center gap-3">
+                <Phone size={20} className="text-accent-orange animate-pulse" />
+                Call Dispatch Now
+              </Link>
+            </Button>
+          </div>
+
+          <div className="inline-flex items-center gap-3 px-6 py-3 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm animate-in fade-in zoom-in duration-1000 delay-500">
+            <span className="text-white/60 text-sm font-bold uppercase tracking-widest">Direct Line:</span>
+            <a href="tel:912-477-9714" className="text-2xl font-black text-accent-orange hover:text-white transition-colors tracking-tighter">
+              912-477-9714
+            </a>
           </div>
         </div>
       </div>

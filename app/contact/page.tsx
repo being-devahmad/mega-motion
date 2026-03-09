@@ -11,7 +11,7 @@ export default function ContactPage() {
     {
       icon: Phone,
       title: 'Our Hotline',
-      value: '9124779714',
+      value: '912-477-9714',
       secondary: 'Emergency dispatch open 24/7',
       color: 'text-accent-orange',
       bg: 'bg-accent-orange/10'

@@ -86,10 +86,10 @@ export function Header() {
               scrolled ? "text-text-dark" : "text-white/90"
             )}>
               <PhoneCall size={16} className="text-accent-orange" />
-              <span>9124779714</span>
+              <span>912-477-9714</span>
             </div>
             <Button asChild size="lg" className="bg-accent-orange hover:bg-accent-orange/90 text-white font-bold rounded-full px-8 shadow-lg shadow-accent-orange/20 transition-all hover:scale-105">
-              <Link href="/booking">Book a Load</Link>
+              <Link href="/booking">Book a Truck</Link>
             </Button>
           </div>
 
@@ -128,7 +128,7 @@ export function Header() {
                 <Link href="/quote" onClick={() => setIsOpen(false)}>Get a Fast Quote</Link>
               </Button>
               <Button asChild className="w-full bg-accent-orange text-white font-bold h-12">
-                <Link href="/booking" onClick={() => setIsOpen(false)}>Book a Load Now</Link>
+                <Link href="/booking" onClick={() => setIsOpen(false)}>Book a Truck Now</Link>
               </Button>
             </div>
           </nav>
