@@ -80,9 +80,9 @@ export function ServicesSection() {
               Built for businesses, fleet owners, and independent truck operators. We provide the infrastructure you need to move cargo across the U.S. efficiently.
             </p>
           </div>
-          <Button asChild size="lg" className="bg-primary-navy hover:bg-primary-navy/90 text-white font-bold h-14 px-8 rounded-xl shadow-lg">
+          {/* <Button asChild size="lg" className="bg-primary-navy hover:bg-primary-navy/90 text-white font-bold h-14 px-8 rounded-xl shadow-lg">
             <Link href="/services">Explorer All Services</Link>
-          </Button>
+          </Button> */}
         </div>
 
         {/* Services Grid */}
