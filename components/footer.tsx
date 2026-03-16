@@ -22,7 +22,7 @@ export function Footer() {
   const legalLinks = [
     { name: 'Privacy Policy', href: '/' },
     { name: 'Terms of Service', href: '/' },
-    { name: 'FMCSA Safety Data', href: '/safety' },
+    // { name: 'FMCSA Safety Data', href: '/safety' },
   ]
 
   return (
