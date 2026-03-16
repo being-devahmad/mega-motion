@@ -26,25 +26,25 @@ export function PricingTable() {
       highlighted: false,
       color: 'blue'
     },
-    {
-      name: 'Express Priority',
-      type: 'EXPRESS DELIVERY',
-      subtitle: 'For time-sensitive and urgent shipments.',
-      buttonText: 'Check Express Availability',
-      badge: 'Most Popular',
-      image: '/pricing-express.png',
-      note: 'Perfect for urgent loads that can\'t afford delays.',
-      features: [
-        'Priority dispatch scheduling',
-        'Faster transit times',
-        'Real-time GPS tracking',
-        'Direct dispatcher communication',
-        'Flexible pickup windows',
-        'Delivery confirmation documentation'
-      ],
-      highlighted: true,
-      color: 'orange'
-    },
+    // {
+    //   name: 'Express Priority',
+    //   type: 'EXPRESS DELIVERY',
+    //   subtitle: 'For time-sensitive and urgent shipments.',
+    //   buttonText: 'Check Express Availability',
+    //   badge: 'Most Popular',
+    //   image: '/pricing-express.png',
+    //   note: 'Perfect for urgent loads that can\'t afford delays.',
+    //   features: [
+    //     'Priority dispatch scheduling',
+    //     'Faster transit times',
+    //     'Real-time GPS tracking',
+    //     'Direct dispatcher communication',
+    //     'Flexible pickup windows',
+    //     'Delivery confirmation documentation'
+    //   ],
+    //   highlighted: true,
+    //   color: 'orange'
+    // },
     {
       name: 'Dedicated & Contract Services',
       type: 'ENTERPRISE / CONTRACT',
@@ -82,7 +82,7 @@ export function PricingTable() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 max-w-4xl mx-auto gap-8 items-center">
           {plans.map((plan, index) => (
             <div
               key={index}
@@ -103,12 +103,12 @@ export function PricingTable() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
 
-                {plan.highlighted && (
+                {/* {plan.highlighted && (
                   <div className="absolute top-4 right-4 bg-accent-orange text-white px-4 py-1.5 rounded-full text-xs font-black tracking-widest uppercase flex items-center gap-1.5 shadow-lg shadow-accent-orange/20">
                     <Star size={12} fill="currentColor" />
                     {plan.badge}
                   </div>
-                )}
+                )} */}
 
                 <div className="absolute bottom-4 left-6">
                   <span className={cn(

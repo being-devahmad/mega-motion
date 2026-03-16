@@ -26,15 +26,15 @@ export function HowItWorks() {
       icon: CalendarCheck,
       color: 'bg-primary-navy'
     },
+    // {
+    //   id: '04',
+    //   title: 'Track in Real Time',
+    //   description: 'Stay updated throughout transit with live GPS and status notifications.',
+    //   icon: Navigation,
+    //   color: 'bg-success-green'
+    // },
     {
       id: '04',
-      title: 'Track in Real Time',
-      description: 'Stay updated throughout transit with live GPS and status notifications.',
-      icon: Navigation,
-      color: 'bg-success-green'
-    },
-    {
-      id: '05',
       title: 'Delivery Completed',
       description: 'Signed confirmation and digital documentation provided instantly.',
       icon: PackageCheck,
@@ -71,7 +71,7 @@ export function HowItWorks() {
             <div className="absolute inset-0 bg-gradient-to-r from-trust-blue via-accent-orange to-primary-navy opacity-30" />
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-12 lg:gap-8 relative">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 relative">
             {steps.map((step, index) => (
               <div
                 key={index}

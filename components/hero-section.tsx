@@ -10,7 +10,7 @@ export function HeroSection() {
     { icon: ShieldCheck, text: 'Licensed & Insured' },
     { icon: CheckCircle, text: 'DOT Compliant' },
     { icon: Clock, text: '24/7 Dispatch Support' },
-    { icon: MapPin, text: 'Real-Time Tracking Available' },
+    // { icon: MapPin, text: 'Real-Time Tracking Available' },
   ]
 
   return (

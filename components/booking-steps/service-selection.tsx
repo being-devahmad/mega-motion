@@ -27,24 +27,24 @@ export function ServiceSelection() {
       description: 'Urgent pickup and rapid delivery for time-sensitive cargo.',
       icon: Clock
     },
-    {
-      id: 'scheduled',
-      name: 'Scheduled Routes',
-      description: 'Predictable schedules for recurring deliveries and partnerships.',
-      icon: Calendar
-    },
-    {
-      id: 'tracking',
-      name: 'Real-Time Tracking',
-      description: 'Shipment with continuous monitoring and live GPS updates.',
-      icon: MapPin
-    },
-    {
-      id: 'insured',
-      name: 'Licensed & Insured',
-      description: 'Fully compliant transport with maximum security and coverage.',
-      icon: ShieldCheck
-    },
+    // {
+    //   id: 'scheduled',
+    //   name: 'Scheduled Routes',
+    //   description: 'Predictable schedules for recurring deliveries and partnerships.',
+    //   icon: Calendar
+    // },
+    // {
+    //   id: 'tracking',
+    //   name: 'Real-Time Tracking',
+    //   description: 'Shipment with continuous monitoring and live GPS updates.',
+    //   icon: MapPin
+    // },
+    // {
+    //   id: 'insured',
+    //   name: 'Licensed & Insured',
+    //   description: 'Fully compliant transport with maximum security and coverage.',
+    //   icon: ShieldCheck
+    // },
   ]
 
   return (

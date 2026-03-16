@@ -16,7 +16,7 @@ export default function Home() {
       <TrustBar />
       <ServicesSection />
       <HowItWorks />
-      <TestimonialsSection />
+      {/* <TestimonialsSection /> */}
       <PricingTable />
       <CTABanner />
       <Footer />

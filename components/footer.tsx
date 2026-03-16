@@ -8,21 +8,20 @@ export function Footer() {
     { name: 'Full Truckload (FTL)', href: '/#services' },
     { name: 'LTL Shipping', href: '/#services' },
     { name: 'Same-Day Delivery', href: '/#services' },
-    { name: 'Scheduled Routes', href: '/#services' },
-    { name: 'Real-Time Tracking', href: '/tracking' },
+    // { name: 'Scheduled Routes', href: '/#services' },
+    // { name: 'Real-Time Tracking', href: '/tracking' },
   ]
 
   const companyLinks = [
-    { name: 'About MegaMotion', href: '/about' },
-    { name: 'Carrier Network', href: '/carriers' },
-    { name: 'Careers', href: '/careers' },
-    { name: 'Get a Fast Quote', href: '/quote' },
+    { name: 'About MegaMotion', href: '/' },
+    { name: 'Careers', href: '/contact' },
+    { name: 'Get a Fast Quote', href: '/booking' },
     { name: 'Contact Dispatch', href: '/contact' },
   ]
 
   const legalLinks = [
-    { name: 'Privacy Policy', href: '/privacy' },
-    { name: 'Terms of Service', href: '/terms' },
+    { name: 'Privacy Policy', href: '/' },
+    { name: 'Terms of Service', href: '/' },
     { name: 'FMCSA Safety Data', href: '/safety' },
   ]
 

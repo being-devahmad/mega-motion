@@ -34,33 +34,33 @@ export function ServicesSection() {
       icon: Clock,
       href: '/booking'
     },
-    {
-      id: '04',
-      title: 'Scheduled Routes',
-      description: 'Recurring deliveries with predictable schedules. Ideal for long-term partnerships and stable logistics.',
-      buttonText: 'Set Up Route',
-      image: '/service-scheduled.png',
-      icon: Calendar,
-      href: '/booking'
-    },
-    {
-      id: '05',
-      title: 'Real-Time Tracking',
-      description: 'Know where your truck is at every moment with live tracking updates and GPS integration.',
-      buttonText: 'Track a Truck',
-      image: '/service-tracking.png',
-      icon: MapPin,
-      href: '/tracking'
-    },
-    {
-      id: '06',
-      title: 'Dry Van Unloading',
-      description: 'From warehouse pickups to urgent deliveries, MegaMotion Logistics provides dependable freight solutions across the U.S.',
-      buttonText: 'Schedule a Pickup',
-      image: '/service-dryvan.png',
-      icon: Truck,
-      href: '/booking'
-    }
+    // {
+    //   id: '04',
+    //   title: 'Scheduled Routes',
+    //   description: 'Recurring deliveries with predictable schedules. Ideal for long-term partnerships and stable logistics.',
+    //   buttonText: 'Set Up Route',
+    //   image: '/service-scheduled.png',
+    //   icon: Calendar,
+    //   href: '/booking'
+    // },
+    // {
+    //   id: '04',
+    //   title: 'Real-Time Tracking',
+    //   description: 'Know where your truck is at every moment with live tracking updates and GPS integration.',
+    //   buttonText: 'Track a Truck',
+    //   image: '/service-tracking.png',
+    //   icon: MapPin,
+    //   href: '/tracking'
+    // },
+    // {
+    //   id: '06',
+    //   title: 'Dry Van Unloading',
+    //   description: 'From warehouse pickups to urgent deliveries, MegaMotion Logistics provides dependable freight solutions across the U.S.',
+    //   buttonText: 'Schedule a Pickup',
+    //   image: '/service-dryvan.png',
+    //   icon: Truck,
+    //   href: '/booking'
+    // }
   ]
 
   return (
@@ -90,7 +90,9 @@ export function ServicesSection() {
           {services.map((service, index) => (
             <div
               key={index}
-              className="group relative flex flex-col bg-white rounded-[2rem] overflow-hidden shadow-xl shadow-gray-200/40 border border-gray-100 transition-all duration-500 hover:shadow-2xl hover:shadow-primary-navy/10 hover:-translate-y-2"
+              className={`group relative flex flex-col bg-white rounded-[2rem] overflow-hidden shadow-xl shadow-gray-200/40 border border-gray-100 transition-all duration-500 hover:shadow-2xl hover:shadow-primary-navy/10 hover:-translate-y-2 ${
+                services.length === 4 && index === 3 ? 'lg:col-start-2' : ''
+              }`}
             >
               {/* Image Container */}
               <div className="relative h-64 w-full overflow-hidden">
